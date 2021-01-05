@@ -1,0 +1,35 @@
+{
+  "name": "pptr-web",
+  "version": "5.5.0",
+  "description": "puppeteer for web browser.",
+  "main": "dist/pptr-web.js",
+  "browser": "dist/pptr-web.js",
+  "files": [
+    "dist/*.*"
+  ],
+  "scripts": {
+    "build": "parcel build web-entry.js --target browser --global puppeteer --no-source-maps --out-dir dist --out-file pptr-web.js",
+    "server": "node example/server.js",
+    "example": "parcel example/index.html --out-dir build"
+  },
+  "browserslist": [
+    "last 2 Chrome version"
+  ],
+  "keywords": [
+    "puppeteer",
+    "web",
+    "browser"
+  ],
+  "author": "webee.yw <webee.yw@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer-core": "^5.5.0"
+  },
+  "devDependencies": {
+    "http-proxy": "^1.18.1",
+    "parcel-bundler": "^1.12.4",
+    "puppeteer": "^5.5.0",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  }
+}
