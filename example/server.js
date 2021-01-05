@@ -18,9 +18,10 @@ const puppeteer = require('puppeteer');
   const port = 8080;
 
   const browser = await puppeteer.launch();
+  const version = await browser.version();
   const pagesCount = (await browser.pages()).length; // just to make sure we have the same stuff on both place
   const browserWSEndpoint = browser.wsEndpoint();
   // avoid CORS problem when connecting to browser debugging end poing directly in web page.
   const customWSEndpoint = await createServer(browserWSEndpoint, host, port);
-  console.log({ browserWSEndpoint, customWSEndpoint, pagesCount });
+  console.log({ browserWSEndpoint, customWSEndpoint, pagesCount, version });
 })();

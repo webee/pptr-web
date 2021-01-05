@@ -8,9 +8,10 @@
     "dist/*.*"
   ],
   "scripts": {
-    "build": "parcel build web-entry.js --target browser --global puppeteer --no-source-maps --out-dir dist --out-file pptr-web.js",
+    "build": "parcel build web-entry.js --target browser --global puppeteer --out-dir dist --out-file pptr-web.js",
     "server": "node example/server.js",
-    "example": "parcel example/index.html --out-dir build"
+    "example": "parcel example/index.html --out-dir build",
+    "prepublish": "yarn build"
   },
   "browserslist": [
     "last 2 Chrome version"
@@ -20,8 +21,16 @@
     "web",
     "browser"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webee/pptr-web.git"
+  },
   "author": "webee.yw <webee.yw@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webee/pptr-web/issues"
+  },
+  "homepage": "https://github.com/webee/pptr-web",
   "dependencies": {
     "puppeteer-core": "^5.5.0"
   },

@@ -7,11 +7,13 @@ window.puppeteer = puppeteer;
     browserWSEndpoint: `ws://${serverAddr}`,
     ignoreHTTPSErrors: true,
   });
+  const version = await browser.version();
   const pagesCount = (await browser.pages()).length;
   const browserWSEndpoint = await browser.wsEndpoint();
 
-  console.log({ browserWSEndpoint, pagesCount });
+  const data = { browserWSEndpoint, pagesCount, version };
+  console.log(data);
 
   let output = document.getElementById('output');
-  output.innerText = JSON.stringify({ browserWSEndpoint, pagesCount });
+  output.innerText = JSON.stringify(data);
 })(`127.0.0.1:8080`);
