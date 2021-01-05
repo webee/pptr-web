@@ -16,7 +16,7 @@ const browser = await puppeteer.connect({
 });
 ```
 
-or in html page with a script tab
+or in html page with a script tag
 
 ```html
 <script src=""></script>
