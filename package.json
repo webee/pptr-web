@@ -7,7 +7,7 @@
   "module": "dist/module/pptr.js",
   "browser": "dist/browser/pptr.js",
   "files": [
-    "dist/*.*"
+    "dist/"
   ],
   "source": "web-entry.js",
   "targets": {
