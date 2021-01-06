@@ -16,10 +16,22 @@ const browser = await puppeteer.connect({
 });
 ```
 
+or download https://cdn.jsdelivr.net/npm/pptr-web@5.5.0/dist/module/pptr.js
+
+then use as a module:
+
+```javascript
+import puppeteer from './pptr.js';
+
+const browser = await puppeteer.connect({
+  browserURL: 'http://localhost:9222',
+});
+```
+
 or in html page with a script tag
 
 ```html
-<script src=""></script>
+<script src="https://cdn.jsdelivr.net/npm/pptr-web@5.5.0/dist/browser/pptr.js"></script>
 
 <script>
   const browser = await puppeteer.connect({
