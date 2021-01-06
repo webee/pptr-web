@@ -1,6 +1,6 @@
 {
   "name": "pptr-web",
-  "version": "5.5.0",
+  "version": "5.5.1",
   "description": "puppeteer for web browser.",
   "type": "module",
   "main": "web-entry.js",
