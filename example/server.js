@@ -1,4 +1,5 @@
-const httpProxy = require('http-proxy');
+import httpProxy from 'http-proxy';
+import puppeteer from 'puppeteer';
 
 async function createServer(WSEndPoint, host, port) {
   httpProxy
@@ -10,8 +11,6 @@ async function createServer(WSEndPoint, host, port) {
     .listen(port); // which port the proxy should listen to
   return `ws://${host}:${port}`;
 }
-
-const puppeteer = require('puppeteer');
 
 (async () => {
   const host = '0.0.0.0';

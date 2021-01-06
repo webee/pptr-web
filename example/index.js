@@ -1,6 +1,6 @@
-import puppeteer from '../dist/pptr-web';
+import puppeteer from '../dist/module/pptr';
 
-window.puppeteer = puppeteer;
+window.pptr = puppeteer;
 
 (async serverAddr => {
   const browser = await puppeteer.connect({

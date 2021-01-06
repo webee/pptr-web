@@ -2,15 +2,44 @@
   "name": "pptr-web",
   "version": "5.5.0",
   "description": "puppeteer for web browser.",
-  "main": "dist/pptr-web.js",
-  "browser": "dist/pptr-web.js",
+  "type": "module",
+  "main": "web-entry.js",
+  "module": "dist/module/pptr.js",
+  "browser": "dist/browser/pptr.js",
   "files": [
     "dist/*.*"
   ],
+  "source": "web-entry.js",
+  "targets": {
+    "main": false,
+    "module": {
+      "context": "browser",
+      "minify": true,
+      "isLibrary": true,
+      "includeNodeModules": true,
+      "outputFormat": "esmodule",
+      "sourceMap": {
+        "inline": true,
+        "inlineSources": true
+      }
+    },
+    "browser": {
+      "context": "browser",
+      "minify": true,
+      "isLibrary": true,
+      "includeNodeModules": true,
+      "outputFormat": "global",
+      "sourceMap": {
+        "inline": true,
+        "inlineSources": true
+      }
+    }
+  },
   "scripts": {
-    "build": "parcel build web-entry.js --target browser --global puppeteer --out-dir dist --out-file pptr-web.js",
+    "build": "parcel build web-entry.js --no-source-maps",
+    "build-debug": "parcel build web-entry.js",
     "server": "node example/server.js",
-    "example": "parcel example/index.html --out-dir build",
+    "example": "parcel example/index.html --dist-dir build",
     "prepublish": "yarn build"
   },
   "browserslist": [
@@ -36,9 +65,7 @@
   },
   "devDependencies": {
     "http-proxy": "^1.18.1",
-    "parcel-bundler": "^1.12.4",
-    "puppeteer": "^5.5.0",
-    "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1"
+    "parcel": "^2.0.0-beta.1",
+    "puppeteer": "^5.5.0"
   }
 }
